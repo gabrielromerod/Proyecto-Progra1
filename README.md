@@ -5,24 +5,31 @@
 
 ENTREGA DEL PROYECTO
 Será evaluado en dos partes. ´
-• La Parte I corresponde al rubro de evaluacion P1, y la Parte II corresponde al rubro de
+• La Parte I corresponde al rubro de 
+evaluacion P1, y la Parte II corresponde al rubro de
 evaluacion P2.
 
-• El proyecto se realiza de manera grupal, los grupos serán de 5 o 6 alumnos y su profesor ´
-determina el modo en que se formaran los grupos.
+• Grupos de 5 o 6
 
 • Se entrega en el Gradescope. 
 La entrega consta de:
   1) El programa 
-  2) Un informe en donde se explica las principales funciones del programa.
-  3) El programa debe tener terminada la implementacion de las funcionalidades que indique el profe
+  2) Un informe en donde se explica las principales funciones de este
+  3) El programa debe tener terminada la implementacion de las 
+  4) funcionalidades que indique el profe
 
 • Nuestro Informe debe incluir estas secciones:
-  – Caratula: Título, nombre del curso, nombre de la U, nombre y codigo de los integrantes y el nombre del ´
-    profe.
+  – Caratula: Título, nombre del curso, nombre de la U, nombre y 
+  codigo de los integrantes y el nombre del profe.
 
-  – Debemos escribir un resumen de todas las secciones elaboradas hasta el momento. El resumen es la ultima sección en ser elaborada, pues contiene
+  – Debemos escribir un resumen de todas las secciones 
+    elaboradas hasta el momento. El resumen es la ultima 
+    sección en ser elaborada, pues contiene
     informacion de las demás secciones.
+    
   – Una breve introducción al tema del proyecto. (generar interés)
-    Podemos mencionar algunos antecedentes, proyectos similares, investigaciones existentes sobre el tema de nuestro proyecto, preguntas sobre el 
-    tema que aun no han sido resueltas, o exponer aspectos interesantes hacerca de este.
+    Podemos mencionar algunos antecedentes, 
+    proyectos similares, investigaciones existentes sobre el 
+    tema de nuestro proyecto, preguntas sobre el 
+    tema que aun no han sido resueltas, o exponer aspectos 
+    interesantes acerca de este.
