@@ -33,3 +33,5 @@ La entrega consta de:
     tema de nuestro proyecto, preguntas sobre el 
     tema que aun no han sido resueltas, o exponer aspectos 
     interesantes acerca de este.
+
+Tenemos hasta el 5 junio
