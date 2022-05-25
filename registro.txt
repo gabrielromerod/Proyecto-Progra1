@@ -1,0 +1,4 @@
+XMW;2001;verde;20000;1
+Morado;2003;djea;30200;1
+Mutsan;2002;rojo;2500000;1
+Asus;2005;VERDE;20000;1

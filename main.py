@@ -1,5 +1,6 @@
 #!/usr/bin/env python 
-#Archivo Principal de Ejecuación
+#Archivo Principal de Ejecuación 
+import modulos
 
 menu = """
 VENTA AUTOS
@@ -7,6 +8,6 @@ VENTA AUTOS
 2. Autos disponibles
 3. Compra auto
 """
-
 print(menu)
-int(input("opcion: "))
+
+modulos.menu_opcion()
