@@ -62,7 +62,32 @@ def inventario_auto():
             color_lista.append(color)
             precio_lista.append(precio_int)
             disponibilidad_lista.append(disponibilidad_int)
+    recorredor = 0
+    print("{a1}               {a2}         {a3}               {a4}              {a5}              ".format(a1="MARCA",a2="FABRICACION",a3="COLOR",a4="PRECIO", a5="ESTADO"))
+    while not recorredor == len(marca_lista):
+        if disponibilidad_lista[recorredor] == 1:
+            vacio = " "
+            total = 20 - len(marca_lista[recorredor])
+            espacios = vacio * total
+            print("{}{}".format(marca_lista[recorredor], espacios), end="")
+            vacio = " "
+            total = 20 - len(str(fabricacion_lista[recorredor]))
+            espacios = vacio * total
+            print("{}{}".format(fabricacion_lista[recorredor], espacios),end="")
+            vacio = " "
+            total = 20 - len(color_lista[recorredor])
+            espacios = vacio * total
+            print("{}{}".format(color_lista[recorredor], espacios), end="")
+            vacio = " "
+            total = 20 - len(str(precio_lista[recorredor]))
+            espacios = vacio * total
+            print("{}{}".format(precio_lista[recorredor], espacios), end="")
+            total = 20 - len(str("disponible"))
+            espacios = vacio * total
+            print("{a1}".format(a1="disponible"))
+            recorredor += 1
+        else:
+            recorredor += 1
 
 def compra_auto():
     1
-
