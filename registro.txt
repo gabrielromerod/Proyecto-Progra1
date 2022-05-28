@@ -1,4 +1,0 @@
-BMW;2001;verde;34000;1
-Audi;2016;naranja;80000;0
-Mercedes;1987;negro;200000;1
-Tesla;2019;blanco zafiro;52000;1
