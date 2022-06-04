@@ -1,4 +1,7 @@
 #Nuestras Funciones
+from re import M
+
+
 def menu_opcion():
     while True:
         opcion = int(input("opcion: "))
@@ -16,7 +19,6 @@ def menu_opcion():
             print("Introduce una opcion valida, por favor vuelva a intentarlo")
 
 def registro_auto():
-
     marca = input("Marca: ")
     fabricacion = int(input("Fabricación: "))
     color = input("Color: ")
@@ -62,6 +64,7 @@ def inventario_auto():
             color_lista.append(color)
             precio_lista.append(precio_int)
             disponibilidad_lista.append(disponibilidad_int)
+        
     recorredor = 0
     print("{a1}               {a2}         {a3}               {a4}              {a5}              ".format(a1="MARCA",a2="FABRICACION",a3="COLOR",a4="PRECIO", a5="ESTADO"))
     while not recorredor == len(marca_lista):
@@ -90,4 +93,57 @@ def inventario_auto():
             recorredor += 1
 
 def compra_auto():
-    1
+    marca_lista = []
+    fabricacion_lista = []
+    color_lista = []
+    precio_lista = []
+    disponibilidad_lista = []
+    with open("registro.txt") as file:
+        for line in file:
+            caracter = str(line)
+            registro = 0
+            marca = ""
+            fabricacion = ""
+            color = ""
+            precio = ""
+            disponibilidad = ""
+            for caracter in line:
+                if caracter == ";":
+                    registro += 1
+                elif registro == 0:
+                    marca += caracter
+                elif registro == 1:
+                    fabricacion += caracter
+                elif registro == 2:
+                    color += caracter
+                elif registro == 3:
+                    precio += caracter
+                elif registro == 4:
+                    disponibilidad += caracter
+            precio_int = int(precio)
+            disponibilidad_int = int(disponibilidad)
+            fabricacion_int = int(fabricacion)     
+            marca_lista.append(marca)
+            fabricacion_lista.append(fabricacion_int)
+            color_lista.append(color)
+            precio_lista.append(precio_int)
+            disponibilidad_lista.append(disponibilidad_int)
+
+    with open("registro.txt", "r+") as file:
+        while True: #filtrar data para saber si existen o no
+            marca_comprar = input("Marca: ")
+            fabricacion_comprar = int(input("Fabricacion: "))
+            color_comprar = input("Color: ")
+            precio_comprar = int(input("Precio: "))
+            if marca_comprar in marca_lista and fabricacion_comprar in fabricacion_lista and color_comprar in color_lista and precio_comprar in precio_lista:
+                break
+            else:
+                print("Por favor revise los datos de entrada")
+        indice = marca_lista.index(marca_comprar) + 1
+        contador = 1                                
+        #NO FUNCIONA NADA DE ACA ABAJO NOS CANSAMOS 
+        for line in file:
+            print(line)
+            if contador == indice:
+                line.write(line.replace([-1],"0"))
+            contador += 1
