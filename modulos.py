@@ -33,7 +33,7 @@ def menu_opcion():
             inventario_auto()
             break
         elif opcion == 3:
-            seleccionar_auto()
+            comprar_auto()
             break
         else:
             print("Introduce una opcion valida, por favor vuelva a intentarlo")
@@ -71,8 +71,23 @@ def inventario_auto():
 
 
 #Seleccionar el auto
-def seleccionar_auto():
+def filtrar_por(marca, matriz_ingresada, posicion):
 
+    #Nueva matriz
+    nueva_matriz = []
+
+    #Filtrar por Marca
+    for i in range(0, len(matriz_ingresada)):
+
+        if matriz_ingresada[i][posicion] == marca :
+            nueva_matriz.append(matriz_ingresada[i])
+
+    #imprimo la lista de autos seleccionada por el usuario tabulada bonita uwu
+    print("Estos son nuestros autos de la marca",marca, "\n")
+    print(tabulate(nueva_matriz, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+
+
+def comprar_auto():
     #Mostrar título de compra de autos
     with open("compra_de_autos.txt", "r") as abrirCompra_Autos:
         print(abrirCompra_Autos.read())
@@ -89,25 +104,11 @@ def seleccionar_auto():
             lineax = i.split()
             matrisita.append(lineax)
 
-    #Nueva matriz
-    nueva_matriz = []
-
-    #Filtrar por Marca
-    for i in range(0, len(matrisita)):
-
-        if matrisita[i][0] == marca_seleccionada:
-            nueva_matriz.append(matrisita[i])
-
-
-
-    #imprimo la lista de autos seleccionada por el usuario tabulada bonita uwu
-    print("Estos son nuestros autos de la marca", marca_seleccionada, "\n")
-    print(tabulate(nueva_matriz, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
-
-
-def comprar_auto():
-    pass
-
+    
+    filtrar_por(marca_seleccionada, matrisita, 0)
+    filtrar_por(marca_seleccionada, matrisita, 1)
+    filtrar_por(marca_seleccionada, matrisita, 2)
+    filtrar_por(marca_seleccionada, matrisita, 3)
 
 
 
