@@ -97,30 +97,8 @@ def seleccionar_auto():
 
         if matrisita[i][0] == marca_seleccionada:
             nueva_matriz.append(matrisita[i])
-            print(i)
 
-            #Prevención de casos 1(si solo hay un vehiculo disponible, se le pregunta si desea comprarlo)
-            # if len(nueva_matriz) == 1:
-            #     #Sí, reutilicé el código de "pregunta()"
-            #     print("Estos son nuestros autos de la marca", marca_seleccionada, "\n")
-            #     print(tabulate(nueva_matriz, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
 
-            #     #Desea comprar el auto?
-            #     si_o_no = input("Quieres comprar este auto?: ")
-            #     si_o_no = si_o_no.lower()
-            #     while True:
-            #         if si_o_no == "si" or si_o_no == "sí":
-            #             comprar_auto()
-            #             break
-            #         elif si_o_no == "no":
-            #             print("Vuelve cuando quierass!")
-            #             pregunta()
-            #         else:
-            #             print("Ingresa una respuesta válida >:C")
-            #             si_o_no = input("Quieres comprar este auto?: ")
-            # else:
-            #     print("Esta marca no está disponible")
-            #     pregunta()
 
     #imprimo la lista de autos seleccionada por el usuario tabulada bonita uwu
     print("Estos son nuestros autos de la marca", marca_seleccionada, "\n")
@@ -128,9 +106,42 @@ def seleccionar_auto():
 
 
 def comprar_auto():
-    print("comprar auto aún no está disponible")
-    pregunta()
+    pass
 
 
-    # for i in range(0, len(opcion)):
-    #     pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Prevención de casos 1(si solo hay un vehiculo disponible, se le pregunta si desea comprarlo)
+# if len(nueva_matriz) == 1:
+#     #Sí, reutilicé el código de "pregunta()"
+#     print("Estos son nuestros autos de la marca", marca_seleccionada, "\n")
+#     print(tabulate(nueva_matriz, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+
+#     #Desea comprar el auto?
+#     si_o_no = input("Quieres comprar este auto?: ")
+#     si_o_no = si_o_no.lower()
+#     while True:
+#         if si_o_no == "si" or si_o_no == "sí":
+#             comprar_auto()
+#             break
+#         elif si_o_no == "no":
+#             print("Vuelve cuando quierass!")
+#             pregunta()
+#         else:
+#             print("Ingresa una respuesta válida >:C")
+#             si_o_no = input("Quieres comprar este auto?: ")
+# else:
+#     print("Esta marca no está disponible")
+#     pregunta()
