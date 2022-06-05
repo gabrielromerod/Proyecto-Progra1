@@ -79,5 +79,7 @@ def compra_auto():
     opcion = int(input("Introduce el ID de uno de nuestros autos: "))
     for i in range(0, len(opcion)):
         pass
+    
+    
 
 
