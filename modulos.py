@@ -106,23 +106,9 @@ def comprar_auto():
 
     
     filtrar_por(marca_seleccionada, matrisita, 0)
-    filtrar_por(marca_seleccionada, matrisita, 1)
-    filtrar_por(marca_seleccionada, matrisita, 2)
-    filtrar_por(marca_seleccionada, matrisita, 3)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # filtrar_por(marca_seleccionada, matrisita, 1)
+    # filtrar_por(marca_seleccionada, matrisita, 2)
+    # filtrar_por(marca_seleccionada, matrisita, 3)
 
 #Prevención de casos 1(si solo hay un vehiculo disponible, se le pregunta si desea comprarlo)
 # if len(nueva_matriz) == 1:
