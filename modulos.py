@@ -1,43 +1,29 @@
 #Nuestras Funciones
 from tabulate import tabulate
 
-#Función para preguntarle al usuario si quiere seguir corriendo el programa
-def pregunta():
-    print("\n\nQuieres seguir usando el programa? ")
-    si_o_no = input("Escribe sí o no para responder: ")
-    si_o_no = si_o_no.lower()
-    while True:
-        if si_o_no == "si" or si_o_no == "sí":
-            menu_opcion()
-        elif si_o_no == "no":
-            exit()
-        else:
-            print("Ingresa una respuesta válida >:C")
-            si_o_no = input("Quieres seguir usando el programa?: ")
-
-
 #Función para mostrar el menú de opciones
 def menu_opcion():
     with open("menu.txt", "r") as abrirMenu:
         print(abrirMenu.read())
     #Pueden encontrar la página de donde saqué
-    #la fuente del título aquí:
+    #la fuente de los títulos aquí:
     #https://patorjk.com/software/taag/#p=display&f=Big&t=Venta%20de%20autos
     while True:
-        opcion = int(input("opcion: "))
+        opcion = input("opcion: ")
         #if opcion < 4 and opcion > 0: 
-        if opcion == 1:
+        if opcion == "1":
             registro_auto()
             break
-        elif opcion == 2:
+        elif opcion == "2":
             inventario_auto()
             break
-        elif opcion == 3:
+        elif opcion == "3":
             comprar_auto()
             break
+        elif opcion == "4":
+            exit()
         else:
             print("Introduce una opcion valida, por favor vuelva a intentarlo")
-
 
 #Registro de autos
 def registro_auto():
@@ -51,7 +37,9 @@ def registro_auto():
         file.write(registro)
     #Fin del programa e interacción con el usuario
     print("\n Registro exitoso !!!")
-    pregunta()
+    with open("compra_de_autos.txt", "r")as file:
+        print(file.read())
+    menu_opcion()
 
 #Mostrar el inventario de la tienda(los autos disponibles)      
 def inventario_auto():
@@ -63,72 +51,96 @@ def inventario_auto():
             lineax = i.split()
             matrisita.append(lineax)
 
+        #Imprimo el título
+        with open("titulo_autos_disponibles.txt", "r") as file:
+            print(file.read())
         #Imprimo la tablita
         print(tabulate(matrisita, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
-    print("\nEstos son todos los autos que tenemos!!")
-    print("Te animas a comprar?")
-    pregunta()#Le preguntamos al usuario si quiere seguir corriendo el programa
+    menu_opcion()
 
-
-#Seleccionar el auto
-def filtrar_por(marca, matriz_ingresada, posicion):
-
-    #Nueva matriz
+#Filtro de selección para comprar auto
+def filtrar_por(dato, matriz_ingresada, posicion):
     nueva_matriz = []
 
-    #Filtrar por Marca
+    #Filtrar por dato
     for i in range(0, len(matriz_ingresada)):
-
-        if matriz_ingresada[i][posicion] == marca :
+        if matriz_ingresada[i][posicion] == dato :
             nueva_matriz.append(matriz_ingresada[i])
-
-    #imprimo la lista de autos seleccionada por el usuario tabulada bonita uwu
-    print("Estos son nuestros autos de la marca",marca, "\n")
-    print(tabulate(nueva_matriz, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
-
+    #imprimo titulo
+    with open("titulo_autos_disponibles.txt", "r") as file:
+        print(file.read())
+    #Devuelvo la matriz de los autos seleccionados por el usuario
+    return nueva_matriz
 
 def comprar_auto():
     #Mostrar título de compra de autos
     with open("compra_de_autos.txt", "r") as abrirCompra_Autos:
         print(abrirCompra_Autos.read())
 
-    marca_seleccionada = input("Introduce la marca del auto que deseas comprar: ")
-    marca_seleccionada = marca_seleccionada.lower().capitalize() 
-
-    #Creación de la nueva matriz que se encargará de filtrar los datos
+    #Creación de la nueva matriz que se encargará de los otros datos
     with open("registro.txt", "r") as lineas:
-        listaLineas = []
-        listaLineas = (lineas.readlines())
-        matrisita = []
-        for i in listaLineas:
-            lineax = i.split()
-            matrisita.append(lineax)
+            listaLineas = []
+            listaLineas = (lineas.readlines())
+            matrisita = []
+            for i in listaLineas:
+                lineax = i.split()
+                matrisita.append(lineax)
 
-    
-    filtrar_por(marca_seleccionada, matrisita, 0)
-    # filtrar_por(marca_seleccionada, matrisita, 1)
-    # filtrar_por(marca_seleccionada, matrisita, 2)
-    # filtrar_por(marca_seleccionada, matrisita, 3)
+    #Filtrar datos
+    #marca
+    marca_seleccionada = input("Introduce la marca del auto que deseas comprar: ")
+    marca_seleccionada = marca_seleccionada.lower().capitalize()
+    lista_de_auto_a_comprar = filtrar_por(marca_seleccionada, matrisita, 0)
+    print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+    si_queda_uno(lista_de_auto_a_comprar)
 
-#Prevención de casos 1(si solo hay un vehiculo disponible, se le pregunta si desea comprarlo)
-# if len(nueva_matriz) == 1:
-#     #Sí, reutilicé el código de "pregunta()"
-#     print("Estos son nuestros autos de la marca", marca_seleccionada, "\n")
-#     print(tabulate(nueva_matriz, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+    #Fabricación
+    fabricacion_seleccionada = input("Introduce el año de fabricación del auto que deseas comprar: ")
+    fabricacion_seleccionada = fabricacion_seleccionada.lower().capitalize() 
+    lista_de_auto_a_comprar = filtrar_por(fabricacion_seleccionada, lista_de_auto_a_comprar, 1)
+    print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+    si_queda_uno(lista_de_auto_a_comprar)
 
-#     #Desea comprar el auto?
-#     si_o_no = input("Quieres comprar este auto?: ")
-#     si_o_no = si_o_no.lower()
-#     while True:
-#         if si_o_no == "si" or si_o_no == "sí":
-#             comprar_auto()
-#             break
-#         elif si_o_no == "no":
-#             print("Vuelve cuando quierass!")
-#             pregunta()
-#         else:
-#             print("Ingresa una respuesta válida >:C")
-#             si_o_no = input("Quieres comprar este auto?: ")
-# else:
-#     print("Esta marca no está disponible")
-#     pregunta()
+    #Color
+    color_seleccionado = input("Introduce el color seleccionado del auto que deseas comprar: ")
+    color_seleccionado = color_seleccionado.lower().capitalize()
+    lista_de_auto_a_comprar = filtrar_por(color_seleccionado, lista_de_auto_a_comprar, 2)
+    print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+    si_queda_uno(lista_de_auto_a_comprar)
+
+    #Precio
+    precio_seleccionado = input("Introduce el precio seleccionado del auto que deseas comprar: ")
+    precio_seleccionado = precio_seleccionado.lower().capitalize()
+    lista_de_auto_a_comprar = filtrar_por(precio_seleccionado, lista_de_auto_a_comprar, 2)
+    print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+    si_queda_uno(lista_de_auto_a_comprar)   
+
+
+def si_queda_uno(auto_a_comprar):
+    if len(auto_a_comprar) == 1:
+
+        print("Deseas comprar este auto?: ")
+        comprar = input("1.- sí\n2.- volver\n3.-Salir\nTu respuesta: ")
+        while True:            
+            if comprar == 1:
+                #Codigo reutilizado de "inventario_auto()"
+                with open("registro.txt", "w"):
+                    with open("registro.txt", "r") as lineas:
+                        listaLineas = []
+                        listaLineas = (lineas.readlines())
+                        matrisita = []
+                        for i in listaLineas:
+                            lineax = i.split()
+                            matrisita.append(lineax)
+                            #matrisita toma una matriz de todos los autos diponibles hasta el momento                    
+                    for x in matrisita:
+                        print(x)
+                        break
+            elif comprar == 2:
+                menu_opcion()
+            elif comprar == 3:
+                exit()
+            else:
+                print("Introduce una opción válida")
+                print("Deseas comprar este auto?: ")
+                comprar = input("1.- sí\n2.- volver\n3.-Salir\nTu respuesta: ")
