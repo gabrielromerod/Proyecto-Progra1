@@ -15,3 +15,4 @@ Mercedes 2020 Azul 9999999 Disponible
 Delorian 1981 Plateado 99999999999 Disponible
 Panama_motors 2022 Verde 900 Disponible
 Mercedes 2022 Rosado 90000 Disponible
+Changan  2016 Verde 25000 Disponible

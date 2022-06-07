@@ -115,7 +115,6 @@ def comprar_auto():
     print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
     si_queda_uno(lista_de_auto_a_comprar)   
 
-
 def si_queda_uno(auto_a_comprar):
     if len(auto_a_comprar) == 1:
 
