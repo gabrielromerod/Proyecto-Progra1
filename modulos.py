@@ -118,27 +118,38 @@ def comprar_auto():
 
 def si_queda_uno(auto_a_comprar):
     if len(auto_a_comprar) == 1:
+        strauto_a_comprar = " ".join(auto_a_comprar[0])
+        strauto_a_comprar = strauto_a_comprar + "\n"
 
         print("Deseas comprar este auto?: ")
-        comprar = input("1.- sí\n2.- volver\n3.-Salir\nTu respuesta: ")
-        while True:            
-            if comprar == 1:
+        comprar = input("1.- sí\n2.- Volver al menú\n3.-Salir\nTu respuesta: ")
+        while True:
+            if comprar == "1":
                 #Codigo reutilizado de "inventario_auto()"
-                with open("registro.txt", "w"):
-                    with open("registro.txt", "r") as lineas:
-                        listaLineas = []
-                        listaLineas = (lineas.readlines())
-                        matrisita = []
-                        for i in listaLineas:
-                            lineax = i.split()
-                            matrisita.append(lineax)
-                            #matrisita toma una matriz de todos los autos diponibles hasta el momento                    
-                    for x in matrisita:
-                        print(x)
-                        break
-            elif comprar == 2:
+                with open("registro.txt", "r") as lineas:
+                    listaLineas = []
+                    listaLineas = (lineas.readlines())
+                    lista_de_autos = []
+                    for i in listaLineas:
+                        lista_de_autos.append(i)
+                        #lista_de_autos toma a todos los autos diponibles linea por linea                   
+                    for x in lista_de_autos:
+                        # print("x : ", x)
+                        # print("ac: ", strauto_a_comprar)
+                        
+                        if x == strauto_a_comprar:
+                            strauto_a_comprar = strauto_a_comprar.replace("Disponible\n", "Vendido\n")
+                            print("===============")
+                            print(strauto_a_comprar)
+                            with open("registro.txt", ""):
+                                lineas.write(strauto_a_comprar)
+
+                    # for x in matrisita:
+                    #     print(x)
+                exit()
+            elif comprar == "2":
                 menu_opcion()
-            elif comprar == 3:
+            elif comprar == "3":
                 exit()
             else:
                 print("Introduce una opción válida")
