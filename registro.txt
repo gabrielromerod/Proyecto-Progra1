@@ -1,18 +1,19 @@
-Toyota 2022 Rosado 30000 Disponible
-Nisan 2022 Plateado 4000000 Disponible
-Bmw 2000 Azul 40000 Disponible
-Mercedes 2019 Rosa 30000 Disponible
-Toyota 2019 Rosa 30000 Disponible
-Kia 2020 Rosa 30000 Disponible
-Mercedes 2019 Rojo 30000 Disponible
-Kia 2020 Azul 30000 Disponible
-Toyota 2020 Azul 30000 Disponible
-Mercedes 2022 Rosa 9900000 Disponible
-Kia 2020 Azul 3000 Disponible
-Kia 2003 Morado 7000 Disponible
-Tesla 4000 Rojo 4000 Disponible
-Mercedes 2020 Azul 9999999 Disponible
-Delorian 1981 Plateado 99999999999 Disponible
-Panama_motors 2022 Verde 900 Disponible
-Mercedes 2022 Rosado 90000 Disponible
-Changan  2016 Verde 25000 Disponible
+1,Toyota,2022,Rosado,30000,Disponible
+2,Nisan,2022,Plateado,4000000,Disponible
+3,Bmw,2000,Azul,40000,Disponible
+4,Mercedes,2019,Rosa,30000,Disponible
+5,Toyota,2019,Rosa,30000,Disponible
+6,Kia,2020,Rosa,30000,Disponible
+7,Mercedes,2019,Rojo,30000,Disponible
+8,Kia,2020,Azul,30000,Disponible
+9,Toyota,2020,Azul,30000,Disponible
+10,Mercedes,2022,Rosa,9900000,Disponible
+11,Kia,2020,Azul,3000,Disponible
+12,Kia,2003,Morado,7000,Disponible
+13,Tesla,4000,Rojo,4000,Disponible
+14,Mercedes benz,2020,Azul,9999999,Disponible
+15,Delorian,1981,Plateado,99999999999,Disponible
+16,Panama_motors,2022,Verde,900,Disponible
+17,Mercedes,2022,Rosado,90000,Disponible
+18,Changan,2016,Verde,25000,Disponible
+19,Lamborgini veneno, 2019, Azul relampago, 90000, Disponible

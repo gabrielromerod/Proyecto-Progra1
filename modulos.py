@@ -1,4 +1,5 @@
 #Nuestras Funciones
+from dataclasses import replace
 from tabulate import tabulate
 
 #Función para mostrar el menú de opciones
@@ -25,6 +26,19 @@ def menu_opcion():
         else:
             print("Introduce una opcion valida, por favor vuelva a intentarlo")
 
+#separar por:
+def separar_por(texto, separacion = " "):
+    lista = []
+    datos = ""
+    for i in texto:
+        if i != separacion:
+            datos += i
+        else:
+            lista.append(datos)
+            datos = ""
+    return(lista)
+
+
 #Registro de autos
 def registro_auto():
     marca = input("Introduce la Marca: ")
@@ -32,7 +46,7 @@ def registro_auto():
     color = input("Introduce el Color: ")
     precio = int(input("Introduce el Precio: "))
     disponibilidad = "Disponible"
-    registro = "{} {} {} {} {}\n".format(marca.lower().capitalize(), fabricacion, color.lower().capitalize(), precio, disponibilidad.lower().capitalize()) #puse esto para que se guarde de manera correcto, creo que debemos encontrar una manera de optimizarlo sin que se vea tan feito
+    registro = "{} {} {} {} {}\n".format(marca.lower().capitalize() + ",", str(fabricacion) + ",", color.lower().capitalize() + ",", str(precio) + ",", disponibilidad) #puse esto para que se guarde de manera correcto, creo que debemos encontrar una manera de optimizarlo sin que se vea tan feito
     with open("registro.txt", "a") as file:
         file.write(registro)
     #Fin del programa e interacción con el usuario
@@ -48,7 +62,7 @@ def inventario_auto():
         listaLineas = (lineas.readlines())
         matrisita = []
         for i in listaLineas:
-            lineax = i.split()
+            lineax = separar_por(i, ",")
             matrisita.append(lineax)
 
         #Imprimo el título
@@ -83,37 +97,37 @@ def comprar_auto():
             listaLineas = (lineas.readlines())
             matrisita = []
             for i in listaLineas:
-                lineax = i.split()
+                lineax = separar_por(i, ",")
                 matrisita.append(lineax)
 
     #Filtrar datos
     #marca
     marca_seleccionada = input("Introduce la marca del auto que deseas comprar: ")
     marca_seleccionada = marca_seleccionada.lower().capitalize()
-    lista_de_auto_a_comprar = filtrar_por(marca_seleccionada, matrisita, 0)
+    lista_de_auto_a_comprar = filtrar_por(marca_seleccionada, matrisita, 1)
     print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
     si_queda_uno(lista_de_auto_a_comprar)
 
     #Fabricación
     fabricacion_seleccionada = input("Introduce el año de fabricación del auto que deseas comprar: ")
     fabricacion_seleccionada = fabricacion_seleccionada.lower().capitalize() 
-    lista_de_auto_a_comprar = filtrar_por(fabricacion_seleccionada, lista_de_auto_a_comprar, 1)
+    lista_de_auto_a_comprar = filtrar_por(fabricacion_seleccionada, lista_de_auto_a_comprar, 2)
     print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
     si_queda_uno(lista_de_auto_a_comprar)
 
     #Color
     color_seleccionado = input("Introduce el color seleccionado del auto que deseas comprar: ")
     color_seleccionado = color_seleccionado.lower().capitalize()
-    lista_de_auto_a_comprar = filtrar_por(color_seleccionado, lista_de_auto_a_comprar, 2)
+    lista_de_auto_a_comprar = filtrar_por(color_seleccionado, lista_de_auto_a_comprar, 3)
     print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
     si_queda_uno(lista_de_auto_a_comprar)
 
-    #Precio
-    precio_seleccionado = input("Introduce el precio seleccionado del auto que deseas comprar: ")
-    precio_seleccionado = precio_seleccionado.lower().capitalize()
-    lista_de_auto_a_comprar = filtrar_por(precio_seleccionado, lista_de_auto_a_comprar, 2)
-    print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
-    si_queda_uno(lista_de_auto_a_comprar)   
+    # #Precio
+    # precio_seleccionado = input("Introduce el precio seleccionado del auto que deseas comprar: ")
+    # precio_seleccionado = precio_seleccionado.lower().capitalize()
+    # lista_de_auto_a_comprar = filtrar_por(precio_seleccionado, lista_de_auto_a_comprar, 2)
+    # print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+    # si_queda_uno(lista_de_auto_a_comprar)   
 
 def si_queda_uno(auto_a_comprar):
     if len(auto_a_comprar) == 1:
