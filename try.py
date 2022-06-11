@@ -21,5 +21,24 @@ def reemplazar_vendido(file, x):
     with open(file, 'w') as f:
         for line in temporal:
             f.write(line)
+    print("El auto seleccionado se ha vendido")
+    print(temporal)
+    temporal = []
+    with open(file, 'r') as f:
+        contador = 1
+        for line in f:
+            a = line.split()
+            if a[-1] == "Vendido":
+                pass
+            else:
+                n = a[1:-1]
+                b = " ".join(n)
+                z = "{} {} Disponible\n".format(contador, b) 
+                temporal.append(z)
+                contador += 1
+    os.remove(file)
+    with open(file, 'w') as f:
+        for line in temporal:
+            f.write(line)
 
 reemplazar_vendido("test.txt", 2)

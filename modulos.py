@@ -67,7 +67,7 @@ def inventario_auto():
             print(file.read())
         #Imprimo la tablita
         print(tabulate(matrisita, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
-    menu_opcion()
+    #menu_opcion()
 
 #Filtro de selección para comprar auto
 def filtrar_por(dato, matriz_ingresada, posicion):
@@ -128,7 +128,6 @@ def comprar_auto():
 
 def reemplazar_vendido(file, x):
     temporal = []
-    string = open(file).read()
     with open(file, 'r') as f:
         contador = 1
         for line in f:
@@ -147,6 +146,23 @@ def reemplazar_vendido(file, x):
     with open(file, 'w') as f:
         for line in temporal:
             f.write(line)
+    temporal = []
+    with open(file, 'r') as f:
+        contador = 1
+        for line in f:
+            a = line.split()
+            if a[-1] == "Vendido":
+                pass
+            else:
+                n = a[1:-1]
+                b = " ".join(n)
+                z = "{} {} Disponible\n".format(contador, b) 
+                temporal.append(z)
+                contador += 1
+    os.remove(file)
+    with open(file, 'w') as f:
+        for line in temporal:
+            f.write(line)
 
 def si_queda_uno(auto_a_comprar):
     if len(auto_a_comprar) == 1:
@@ -158,8 +174,8 @@ def si_queda_uno(auto_a_comprar):
         while True:
             if comprar == "1":
                 #Codigo reutilizado de "inventario_auto()"
-                reemplazar_vendido("registro.txt", )
-                exit()
+                print(auto_a_comprar[0][0])
+                reemplazar_vendido("registro.txt", int(auto_a_comprar[0][0]))
             elif comprar == "2":
                 menu_opcion()
             elif comprar == "3":

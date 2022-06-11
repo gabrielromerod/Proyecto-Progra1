@@ -1,5 +1,4 @@
-1 Pepe Vendido
-2 Juan Vendido3 Adam Disponible
-4 Carlos Disponible
-5 Arme Vendido
-6 Polo Disponible
+1 Pepe Lopez Disponible
+2 Adam Lopez Disponible
+3 Arme Lorez Disponible
+4 Polo Kala Disponible

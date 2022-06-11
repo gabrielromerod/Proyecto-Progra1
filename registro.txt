@@ -1,3 +1,2 @@
 1 Bmw 2002 Rojo 20000 Disponible
 2 Bmw 2002 Verde 20000 Disponible
-3 Mercedes 2003 Azul 50000 Disponible
