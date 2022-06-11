@@ -1,5 +1,6 @@
 #Nuestras Funciones
 from tabulate import tabulate
+import os
 
 #Función para mostrar el menú de opciones
 def menu_opcion():
@@ -32,9 +33,19 @@ def registro_auto():
     color = input("Introduce el Color: ")
     precio = int(input("Introduce el Precio: "))
     disponibilidad = "Disponible"
-    registro = "{} {} {} {} {}\n".format(marca.lower().capitalize(), fabricacion, color.lower().capitalize(), precio, disponibilidad.lower().capitalize()) #puse esto para que se guarde de manera correcto, creo que debemos encontrar una manera de optimizarlo sin que se vea tan feito
-    with open("registro.txt", "a") as file:
-        file.write(registro)
+    if os.path.exists("registro.txt"):
+        with open("registro.txt", "r") as file:
+            contador = 1
+            for line in file:
+                contador += 1
+        registro = "{} {} {} {} {} {}\n".format(contador,marca.lower().capitalize(), fabricacion, color.lower().capitalize(), precio, disponibilidad.lower().capitalize()) #puse esto para que se guarde de manera correcto, creo que debemos encontrar una manera de optimizarlo sin que se vea tan feito
+        with open("registro.txt", "a") as file:
+            file.write(registro)
+    else:
+        contador = 1
+        registro = "{} {} {} {} {} {}\n".format(contador,marca.lower().capitalize(), fabricacion, color.lower().capitalize(), precio, disponibilidad.lower().capitalize()) #puse esto para que se guarde de manera correcto, creo que debemos encontrar una manera de optimizarlo sin que se vea tan feito
+        with open("registro.txt", "a") as file:
+            file.write(registro)
     #Fin del programa e interacción con el usuario
     print("\n Registro exitoso !!!")
     with open("compra_de_autos.txt", "r")as file:
@@ -90,30 +101,52 @@ def comprar_auto():
     #marca
     marca_seleccionada = input("Introduce la marca del auto que deseas comprar: ")
     marca_seleccionada = marca_seleccionada.lower().capitalize()
-    lista_de_auto_a_comprar = filtrar_por(marca_seleccionada, matrisita, 0)
+    lista_de_auto_a_comprar = filtrar_por(marca_seleccionada, matrisita, 1)
     print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
     si_queda_uno(lista_de_auto_a_comprar)
 
     #Fabricación
     fabricacion_seleccionada = input("Introduce el año de fabricación del auto que deseas comprar: ")
     fabricacion_seleccionada = fabricacion_seleccionada.lower().capitalize() 
-    lista_de_auto_a_comprar = filtrar_por(fabricacion_seleccionada, lista_de_auto_a_comprar, 1)
+    lista_de_auto_a_comprar = filtrar_por(fabricacion_seleccionada, lista_de_auto_a_comprar, 2)
     print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
     si_queda_uno(lista_de_auto_a_comprar)
 
     #Color
     color_seleccionado = input("Introduce el color seleccionado del auto que deseas comprar: ")
     color_seleccionado = color_seleccionado.lower().capitalize()
-    lista_de_auto_a_comprar = filtrar_por(color_seleccionado, lista_de_auto_a_comprar, 2)
+    lista_de_auto_a_comprar = filtrar_por(color_seleccionado, lista_de_auto_a_comprar, 3)
     print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
     si_queda_uno(lista_de_auto_a_comprar)
 
     #Precio
     precio_seleccionado = input("Introduce el precio seleccionado del auto que deseas comprar: ")
     precio_seleccionado = precio_seleccionado.lower().capitalize()
-    lista_de_auto_a_comprar = filtrar_por(precio_seleccionado, lista_de_auto_a_comprar, 2)
+    lista_de_auto_a_comprar = filtrar_por(precio_seleccionado, lista_de_auto_a_comprar, 4)
     print(tabulate(lista_de_auto_a_comprar, headers = ["Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
     si_queda_uno(lista_de_auto_a_comprar)   
+
+def reemplazar_vendido(file, x):
+    temporal = []
+    string = open(file).read()
+    with open(file, 'r') as f:
+        contador = 1
+        for line in f:
+            if contador == x:
+                a = line.split()
+                for z in range(len(a)):
+                    if a[z] == "Disponible":
+                            a[z] = "Vendido\n"
+                b = " ".join(a)
+                temporal.append(b)
+                contador += 1
+            else:
+                temporal.append(line)
+                contador += 1
+    os.remove(file)
+    with open(file, 'w') as f:
+        for line in temporal:
+            f.write(line)
 
 def si_queda_uno(auto_a_comprar):
     if len(auto_a_comprar) == 1:
@@ -125,26 +158,7 @@ def si_queda_uno(auto_a_comprar):
         while True:
             if comprar == "1":
                 #Codigo reutilizado de "inventario_auto()"
-                with open("registro.txt", "r") as lineas:
-                    listaLineas = []
-                    listaLineas = (lineas.readlines())
-                    lista_de_autos = []
-                    for i in listaLineas:
-                        lista_de_autos.append(i)
-                        #lista_de_autos toma a todos los autos diponibles linea por linea                   
-                    for x in lista_de_autos:
-                        # print("x : ", x)
-                        # print("ac: ", strauto_a_comprar)
-                        
-                        if x == strauto_a_comprar:
-                            strauto_a_comprar = strauto_a_comprar.replace("Disponible\n", "Vendido\n")
-                            print("===============")
-                            print(strauto_a_comprar)
-                            with open("registro.txt", ""):
-                                lineas.write(strauto_a_comprar)
-
-                    # for x in matrisita:
-                    #     print(x)
+                reemplazar_vendido("registro.txt", )
                 exit()
             elif comprar == "2":
                 menu_opcion()
