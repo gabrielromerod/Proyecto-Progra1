@@ -1,7 +1,7 @@
-1 Xiaomi 2020 Negro 31000 Disponible
-2 Huawei 2022 Negro 60000 Disponible
-3 Mercedes 2023 Azul 70000 Disponible
-4 Kia 2020 Azul 85040 Disponible
-5 Audi 2023 Turquesa 70500 Disponible
-6 Renault 2022 Zafiro 31000 Disponible
-7 Google 2021 Naranja 1500 Disponible
+1,Xiaomi,2020,Negro,31000,Disponible
+2,Huawei,2022,Negro,60000,Disponible
+3,Renault,2022,Zafiro,31000,Disponible
+4,Mercedes benzs,2003,Rojo,20000,Disponible
+5,General motors,2001,Verde,10200,Disponible
+6,Mercedes,2003,Rojo,21000,Disponible
+7,Mercedes,2003,Rojo,21000,Disponible

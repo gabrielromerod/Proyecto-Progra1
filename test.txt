@@ -1,4 +1,7 @@
-1 Pepe Lopez Disponible
-2 Adam Lopez Disponible
-3 Arme Lorez Disponible
-4 Polo Kala Disponible
+1,Xiaomi,2020,Negro,31000,Disponible
+2,Renault,2022,Zafiro,31000,Disponible
+3,Google,2021,Naranja,1500,Disponible
+4,Mercedes benzs,2003,Rojo,20000,Disponible
+5,General motors,2001,Verde,10200,Disponible
+6,Mercedes,2003,Rojo,21000,Disponible
+7,Mercedes,2003,Rojo,21000,Disponible
