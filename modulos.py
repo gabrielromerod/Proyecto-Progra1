@@ -14,12 +14,15 @@ def menu_opcion():
         #if opcion < 4 and opcion > 0: 
         if opcion == "1":
             registro_auto()
+            menu_opcion()
             break
         elif opcion == "2":
             inventario_auto()
+            menu_opcion()
             break
         elif opcion == "3":
             comprar_auto()
+            menu_opcion()
             break
         elif opcion == "4":
             exit()
@@ -50,7 +53,6 @@ def registro_auto():
     print("\n Registro exitoso !!!")
     with open("compra_de_autos.txt", "r")as file:
         print(file.read())
-    menu_opcion()
 
 #Mostrar el inventario de la tienda(los autos disponibles)      
 def inventario_auto():
@@ -146,6 +148,8 @@ def reemplazar_vendido(file, x):
     with open(file, 'w') as f:
         for line in temporal:
             f.write(line)
+
+def eliminar_vendido(file):
     temporal = []
     with open(file, 'r') as f:
         contador = 1
@@ -171,16 +175,16 @@ def si_queda_uno(auto_a_comprar):
 
         print("Deseas comprar este auto?: ")
         comprar = input("1.- sí\n2.- Volver al menú\n3.-Salir\nTu respuesta: ")
-        while True:
-            if comprar == "1":
-                #Codigo reutilizado de "inventario_auto()"
-                print(auto_a_comprar[0][0])
-                reemplazar_vendido("registro.txt", int(auto_a_comprar[0][0]))
-            elif comprar == "2":
-                menu_opcion()
-            elif comprar == "3":
-                exit()
-            else:
-                print("Introduce una opción válida")
-                print("Deseas comprar este auto?: ")
-                comprar = input("1.- sí\n2.- volver\n3.-Salir\nTu respuesta: ")
+        if comprar == "1":
+            #Codigo reutilizado de "inventario_auto()"
+            reemplazar_vendido("registro.txt", int(auto_a_comprar[0][0]))
+            inventario_auto()
+            eliminar_vendido("registro.txt")
+        elif comprar == "2":
+            menu_opcion()
+        elif comprar == "3":
+            exit()
+        else:
+            print("Introduce una opción válida")
+            print("Deseas comprar este auto?: ")
+            comprar = input("1.- sí\n2.- volver\n3.-Salir\nTu respuesta: ")

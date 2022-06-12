@@ -1,2 +1,8 @@
-1 Bmw 2002 Rojo 20000 Disponible
-2 Bmw 2002 Verde 20000 Disponible
+1 Xiaomi 2020 Negro 31000 Disponible
+2 Huawei 2022 Negro 60000 Disponible
+3 Mercedes 2023 Azul 70000 Disponible
+4 Kia 2020 Azul 85040 Disponible
+5 Google 2021 Naranja 150000 Disponible
+6 Audi 2023 Turquesa 70500 Disponible
+7 Suzuki 2022 Rosa 30200 Disponible
+8 Renault 2022 Zafiro 31000 Disponible
