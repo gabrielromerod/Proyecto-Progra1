@@ -180,6 +180,7 @@ def si_queda_uno(auto_a_comprar):
             reemplazar_vendido("registro.txt", int(auto_a_comprar[0][0]))
             inventario_auto()
             eliminar_vendido("registro.txt")
+            menu_opcion()
         elif comprar == "2":
             menu_opcion()
         elif comprar == "3":
