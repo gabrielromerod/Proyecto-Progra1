@@ -206,3 +206,5 @@ def enterContinuar():
     a = ""
     if a  == "":
         menu_opcion()
+
+#Programa terminado y optimizado segun la rubrica uwu
