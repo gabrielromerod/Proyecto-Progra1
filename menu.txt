@@ -13,6 +13,6 @@
 
     1. Registrar auto
     2. Autos disponibles
-    3. Compra auto
+    3. Comprar autos
     4. Salir
 
