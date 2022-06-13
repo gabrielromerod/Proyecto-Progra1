@@ -14,33 +14,20 @@ def menu_opcion():
         #if opcion < 4 and opcion > 0: 
         if opcion == "1":
             registro_auto()
-            menu_opcion()
+            enterContinuar()
             break
         elif opcion == "2":
             inventario_auto()
-            menu_opcion()
+            enterContinuar()
             break
         elif opcion == "3":
             comprar_auto()
-            menu_opcion()
+            enterContinuar()
             break
         elif opcion == "4":
             exit()
         else:
             print("Introduce una opcion valida, por favor vuelva a intentarlo")
-
-#separar por:
-def separar_por(texto, separacion = " "):
-    lista = []
-    datos = ""
-    for i in texto:
-        if i != separacion:
-            datos += i
-        else:
-            lista.append(datos)
-            datos = ""
-    return(lista)
-
 
 #Registro de autos
 def registro_auto():
@@ -70,8 +57,6 @@ def registro_auto():
             file.write(registro)
     #Fin del programa e interacción con el usuario
     print("\n Registro exitoso !!!")
-    with open("compra_de_autos.txt", "r")as file:
-        print(file.read())
 
 #Mostrar el inventario de la tienda(los autos disponibles)      
 def inventario_auto():
@@ -80,12 +65,13 @@ def inventario_auto():
         listaLineas = (lineas.readlines())
         matrisita = []
         for i in listaLineas:
-            lineax = separar_por(i, ",")
+            lineax = i.split(",")
             matrisita.append(lineax)
 
         #Imprimo el título
         with open("titulo_autos_disponibles.txt", "r") as file:
             print(file.read())
+        
         #Imprimo la tablita
         print(tabulate(matrisita, headers = ["","Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
 
@@ -114,7 +100,7 @@ def comprar_auto():
         listaLineas = (lineas.readlines())
         matrisita = []
         for i in listaLineas:
-            lineax = separar_por(i, ",")
+            lineax = i.split(",")
             matrisita.append(lineax)
 
     #Filtrar datos
@@ -175,7 +161,6 @@ def eliminar_vendido(file):
         contador = 1
         for line in f:
             a = line.split(",")
-            print(a)
             if a[-1] == "Vendido\n":
                 pass
             else:
@@ -201,9 +186,8 @@ def si_queda_uno(auto_a_comprar):
             reemplazar_vendido("registro.txt", int(auto_a_comprar[0][0]))
             print("Gracias por su compra")
             inventario_auto()
-            print("Inventario")
             eliminar_vendido("registro.txt")
-            menu_opcion()
+            enterContinuar()
         elif comprar == "2":
             menu_opcion()
         elif comprar == "3":
@@ -212,10 +196,13 @@ def si_queda_uno(auto_a_comprar):
             print("Introduce una opción válida")
             print("Deseas comprar este auto?: ")
             comprar = input("1.- sí\n2.- volver\n3.-Salir\nTu respuesta: ")
-    # else:
-    #     listaNueva  = []
-    #     for i in auto_a_comprar:
-    #         listaNueva.append(i[1:len(auto_a_comprar)])
-        
-    #     for i in len(listaNueva):
-    #         pass
+    elif len(auto_a_comprar) == 0:
+        print("Lo sentimos no disponenmos el auto que deseas comprar")
+        print("Vuelve a intentarlo")
+        enterContinuar()
+
+def enterContinuar():
+    a = input("Presiona enter para continuar...")
+    a = ""
+    if a  == "":
+        menu_opcion()

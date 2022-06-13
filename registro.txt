@@ -1,7 +1,13 @@
-1,Xiaomi,2020,Negro,31000,Disponible
-2,Huawei,2022,Negro,60000,Disponible
-3,Renault,2022,Zafiro,31000,Disponible
-4,Mercedes benzs,2003,Rojo,20000,Disponible
-5,General motors,2001,Verde,10200,Disponible
-6,Mercedes,2003,Rojo,21000,Disponible
-7,Mercedes,2003,Rojo,21000,Disponible
+1,Toyota,2022,Rosado,30000,Disponible
+2,Nisan,2022,Plateado,4000000,Disponible
+3,Bmw,2000,Azul,40000,Disponible
+4,Mercedes,2019,Rosa,30000,Disponible
+5,Toyota,2019,Rosa,30000,Disponible
+6,Kia,2020,Rosa,30000,Disponible
+7,Tesla,4000,Rojo,4000,Disponible
+8,Mercedes benz,2020,Azul,9999999,Disponible
+9,Delorian,1981,Plateado,99999999999,Disponible
+10,Panama_motors,2022,Verde,900,Disponible
+11,Mercedes,2022,Rosado,90000,Disponible
+12,Changan,2016,Verde,25000,Disponible
+13,Lamborgini veneno, 2019, Azul relampago, 90000, Disponible
