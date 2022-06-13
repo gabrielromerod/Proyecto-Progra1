@@ -132,10 +132,6 @@ def comprar_auto():
     print(tabulate(lista_de_auto_a_comprar, headers = ["", "Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
     si_queda_uno(lista_de_auto_a_comprar)
 
-    #ID
-    lista_de_auto_a_comprar = input("Introduce el ID seleccionado del auto que deseas comprar: ")
-    si_queda_uno(lista_de_auto_a_comprar)
-
 def reemplazar_vendido(file, x):
     temporal = []
     with open(file, 'r') as f:
