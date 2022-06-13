@@ -207,4 +207,4 @@ def enterContinuar():
     if a  == "":
         menu_opcion()
 
-#Programa terminado y optimizado segun la rubrica uwu
+#Programa terminado y optimizado segun la rubrica nwn
