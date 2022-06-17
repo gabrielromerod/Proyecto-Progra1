@@ -36,13 +36,6 @@ def registro_auto():
         fabricacion = int(input("Introduce el año de Fabricación: "))
         color = input("Introduce el Color: ")
         precio = int(input("Introduce el Precio: "))
-        while True:
-            lista = []
-            lista.append(precio)
-            if precio[0] == "-":
-                precio = int(input("Introduce el Precio: "))
-            else:
-                break
 
     except:
         print("--------------------------------------------------------------------")
