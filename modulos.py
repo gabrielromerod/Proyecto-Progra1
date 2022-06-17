@@ -36,7 +36,22 @@ def registro_auto():
         fabricacion = int(input("Introduce el año de Fabricación: "))
         color = input("Introduce el Color: ")
         precio = int(input("Introduce el Precio: "))
-
+        
+        # while True:
+            
+        #     a = str(precio)
+        #     for i in a:
+        #         lista = []
+        #         b = " " + i
+        #         lista.append(b)
+            
+        #     if lista[0] == "-":
+        #         print("--------------------------------------------------------------------")
+        #         print("Ingresaste un valor erroneo, por favor vuelve a ingresar los datos: ")
+        #         print("--------------------------------------------------------------------")
+        #         registro_auto()
+        #     else:
+        #         break
     except:
         print("--------------------------------------------------------------------")
         print("Ingresaste un valor erroneo, por favor vuelve a ingresar los datos: ")
