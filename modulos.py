@@ -1,6 +1,6 @@
 #Nuestras Funciones
 from tabulate import tabulate
-import os, titulos, time
+import os, titulos
 
 #Función para mostrar el menú de opciones
 def menu_opcion():
