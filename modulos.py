@@ -1,14 +1,10 @@
 #Nuestras Funciones
 from tabulate import tabulate
-import os
+import os, titulos, time
 
 #Función para mostrar el menú de opciones
 def menu_opcion():
-    with open("menu.txt", "r") as abrirMenu:
-        print(abrirMenu.read())
-    #Pueden encontrar la página de donde saqué
-    #la fuente de los títulos aquí:
-    #https://patorjk.com/software/taag/#p=display&f=Big&t=Venta%20de%20autos
+    titulos.menu_opcion()
     while True:
         opcion = input("opcion: ")
         #if opcion < 4 and opcion > 0: 
@@ -25,6 +21,14 @@ def menu_opcion():
             enterContinuar()
             break
         elif opcion == "4":
+            inventario_auto_vendido()
+            enterContinuar()
+            break
+        elif opcion == "5":
+            total_vendidos()
+            enterContinuar()
+            break
+        elif opcion == "6":
             exit()
         else:
             print("Introduce una opcion valida, por favor vuelva a intentarlo")
@@ -34,8 +38,19 @@ def registro_auto():
     try:
         marca = input("Introduce la Marca: ")
         fabricacion = int(input("Introduce el año de Fabricación: "))
+        if fabricacion < 500:
+            print("--------------------------------------------------------------------")
+            print("El año de fabricación no puede ser menor a 500 años, por favor vuelva a intentarlo")
+            print("--------------------------------------------------------------------")
+            registro_auto()
         color = input("Introduce el Color: ")
         precio = int(input("Introduce el Precio: "))
+        if precio < 0:
+            print("--------------------------------------------------------------------")
+            print("El precio no puede ser negativo, por favor vuelva a intentarlo")
+            print("--------------------------------------------------------------------")
+            registro_auto()
+        
 
     except:
         print("--------------------------------------------------------------------")
@@ -57,6 +72,7 @@ def registro_auto():
         with open("registro.txt", "a") as file:
             file.write(registro)
     #Fin del programa e interacción con el usuario
+    titulos.registro_completado()
     print("\n Registro exitoso !!!")
 
 #Mostrar el inventario de la tienda(los autos disponibles)      
@@ -69,9 +85,21 @@ def inventario_auto():
             lineax = i.split(",")
             matrisita.append(lineax)
 
-        #Imprimo el título
-        with open("titulo_autos_disponibles.txt", "r") as file:
-            print(file.read())
+        titulos.registro_completado()
+        
+        #Imprimo la tablita
+        print(tabulate(matrisita, headers = ["","Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+
+def inventario_auto_vendido():
+    with open("vendidos.txt", "r") as lineas:
+        listaLineas = []
+        listaLineas = (lineas.readlines())
+        matrisita = []
+        for i in listaLineas:
+            lineax = i.split(",")
+            matrisita.append(lineax)
+
+        titulos.autos_vendidos()
         
         #Imprimo la tablita
         print(tabulate(matrisita, headers = ["","Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
@@ -84,16 +112,16 @@ def filtrar_por(dato, matriz_ingresada, posicion):
     for i in range(0, len(matriz_ingresada)):
         if matriz_ingresada[i][posicion] == dato :
             nueva_matriz.append(matriz_ingresada[i])
+
     #imprimo titulo
-    with open("titulo_autos_disponibles.txt", "r") as file:
-        print(file.read())
+    titulos.autos_disponibles()
+
     #Devuelvo la matriz de los autos seleccionados por el usuario
     return nueva_matriz
 
 def comprar_auto():
     #Mostrar título de compra de autos
-    with open("compra_de_autos.txt", "r") as abrirCompra_Autos:
-        print(abrirCompra_Autos.read())
+    titulos.compra_de_autos()
 
     #Creación de la nueva matriz que se encargará de los otros datos
     with open("registro.txt", "r") as lineas:
@@ -154,12 +182,16 @@ def reemplazar_vendido(file, x):
 
 def eliminar_vendido(file):
     temporal = []
+    temporal_vendido = []
     with open(file, 'r') as f:
         contador = 1
         for line in f:
             a = line.split(",")
             if a[-1] == "Vendido\n":
-                pass
+                n = a[1:-1]
+                b = ",".join(n)
+                z = "{},Vendido\n".format(b)
+                temporal_vendido.append(z)
             else:
                 n = a[1:-1]
                 b = ",".join(n)
@@ -170,6 +202,21 @@ def eliminar_vendido(file):
     with open(file, 'w') as f:
         for line in temporal:
             f.write(line)
+    a = temporal_vendido[0].split(",")
+    if os.path.exists("vendidos.txt"):
+        with open("vendidos.txt", "r") as file:
+            contador = 1
+            for line in file:
+                contador += 1
+        b = ",".join(a)
+        registro = "{},{}".format(contador, b)
+        with open("vendidos.txt", "a") as file:
+            file.write(registro)
+    else:
+        b = ",".join(a)
+        registro = "{},{}".format(1, b)
+        with open("vendidos.txt", "a") as file:
+            file.write(registro)
 
 def si_queda_uno(auto_a_comprar):
     if len(auto_a_comprar) == 1:
@@ -198,10 +245,24 @@ def si_queda_uno(auto_a_comprar):
         print("Vuelve a intentarlo")
         enterContinuar()
 
+def total_vendidos():
+    if os.path.exists("vendidos.txt"):
+        contador = 0
+        precios = []
+        with open("vendidos.txt", "r") as file:
+            for line in file:
+                a = line.split(",")
+                b = int(a[4])
+                precios.append(b)
+                contador += 1
+        total = sum(precios)
+        titulos.total_vendidos()
+        print("El total de autos vendidos es: {} y la cantidad en soles de autos vendidos es de: S/{} ".format(contador, total))
+    else:
+        print("No hay autos vendidos")
+
 def enterContinuar():
     a = input("Presiona enter para continuar...")
     a = ""
     if a  == "":
         menu_opcion()
-
-#Programa terminado y optimizado segun la rubrica nwn
