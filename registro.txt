@@ -1,0 +1,123 @@
+1,Abarth,2009,Amarillo,41000,Disponible
+2,Abarth,2006,Blanco,47000,Disponible
+3,Abarth,2006,Naranja,21000,Disponible
+4,Abarth,2014,Negro,30000,Disponible
+5,Abarth,2013,Morado,11000,Disponible
+6,Abarth,2024,Verde,40000,Disponible
+7,Abarth,2023,Anaranjado,28000,Disponible
+8,Abarth,2017,Morado,42000,Disponible
+9,Abarth,2009,Rojo,33000,Disponible
+10,Alfa Romeo,2022,Verde,23000,Disponible
+11,Alfa Romeo,2020,Azul,16000,Disponible
+12,Alfa Romeo,2024,Negro,25000,Disponible
+13,Alfa Romeo,2006,Rojo,37000,Disponible
+14,Alfa Romeo,2025,Amarillo,21000,Disponible
+15,Alfa Romeo,2023,Naranja,46000,Disponible
+16,Alfa Romeo,2012,Blanco,22000,Disponible
+17,Alfa Romeo,2021,Anaranjado,44000,Disponible
+18,Alfa Romeo,2024,Verde,39000,Disponible
+19,Alfa Romeo,2014,Rojo,27000,Disponible
+20,Aston Martin,2022,Blanco,41000,Disponible
+21,Aston Martin,2011,Naranja,18000,Disponible
+22,Aston Martin,2007,Verde,43000,Disponible
+23,Aston Martin,2007,Blanco,40000,Disponible
+24,Aston Martin,2020,Blanco,32000,Disponible
+25,Aston Martin,2018,Naranja,38000,Disponible
+26,Audi,2019,Blanco,38000,Disponible
+27,Audi,2006,Azul,33000,Disponible
+28,Audi,2013,Negro,22000,Disponible
+29,Audi,2024,Morado,14000,Disponible
+30,Audi,2006,Naranja,17000,Disponible
+31,Audi,2005,Anaranjado,26000,Disponible
+32,Audi,2017,Negro,17000,Disponible
+33,Audi,2013,Negro,15000,Disponible
+34,Audi,2019,Amarillo,24000,Disponible
+35,Audi,2024,Blanco,29000,Disponible
+36,Audi,2023,Anaranjado,45000,Disponible
+37,BMW,2008,Blanco,36000,Disponible
+38,BMW,2024,Amarillo,49000,Disponible
+39,BMW,2021,Morado,21000,Disponible
+40,BMW,2011,Morado,23000,Disponible
+41,BMW,2019,Anaranjado,43000,Disponible
+42,BMW,2017,Morado,45000,Disponible
+43,BMW,2021,Rojo,31000,Disponible
+44,BMW,2012,Morado,21000,Disponible
+45,BMW,2024,Morado,39000,Disponible
+46,BMW,2023,Amarillo,22000,Disponible
+47,BMW,2023,Verde,27000,Disponible
+48,BMW,2023,Anaranjado,36000,Disponible
+49,BMW,2013,Azul,43000,Disponible
+50,BMW,2025,Negro,11000,Disponible
+51,BMW,2014,Negro,41000,Disponible
+52,BMW,2022,Negro,30000,Disponible
+53,Bentley,2007,Negro,47000,Disponible
+54,Bentley,2016,Anaranjado,46000,Disponible
+55,Bentley,2006,Morado,27000,Disponible
+56,Bentley,2017,Anaranjado,48000,Disponible
+57,Bentley,2009,Negro,28000,Disponible
+58,Bentley,2019,Negro,29000,Disponible
+59,Bentley,2017,Naranja,26000,Disponible
+60,Bentley,2007,Naranja,38000,Disponible
+61,Bentley,2020,Morado,17000,Disponible
+62,Bentley,2014,Anaranjado,32000,Disponible
+63,Bentley,2023,Anaranjado,27000,Disponible
+64,Bentley,2025,Naranja,13000,Disponible
+65,Bugatti,2020,Amarillo,35000,Disponible
+66,Bugatti,2008,Naranja,20000,Disponible
+67,Bugatti,2016,Azul,32000,Disponible
+68,Bugatti,2007,Blanco,44000,Disponible
+69,Bugatti,2011,Amarillo,22000,Disponible
+70,Bugatti,2012,Blanco,20000,Disponible
+71,Bugatti,2022,Naranja,38000,Disponible
+72,Bugatti,2014,Naranja,41000,Disponible
+73,Cadillac,2018,Azul,38000,Disponible
+74,Cadillac,2007,Rojo,25000,Disponible
+75,Cadillac,2017,Naranja,23000,Disponible
+76,Cadillac,2012,Morado,46000,Disponible
+77,Cadillac,2013,Anaranjado,18000,Disponible
+78,Cadillac,2008,Blanco,27000,Disponible
+79,Cadillac,2021,Amarillo,14000,Disponible
+80,Cadillac,2024,Azul,22000,Disponible
+81,Cadillac,2005,Naranja,33000,Disponible
+82,Cadillac,2022,Morado,18000,Disponible
+83,Chevrolet,2017,Verde,36000,Disponible
+84,Chevrolet,2015,Negro,24000,Disponible
+85,Chevrolet,2014,Amarillo,14000,Disponible
+86,Chevrolet,2009,Anaranjado,41000,Disponible
+87,Chevrolet,2018,Naranja,46000,Disponible
+88,Chevrolet,2019,Anaranjado,13000,Disponible
+89,Chevrolet,2015,Verde,26000,Disponible
+90,Chevrolet,2014,Azul,28000,Disponible
+91,Chevrolet,2025,Anaranjado,43000,Disponible
+92,Chevrolet,2019,Verde,22000,Disponible
+93,Chevrolet,2023,Verde,21000,Disponible
+94,Chevrolet,2021,Morado,16000,Disponible
+95,Chrysler,2018,Naranja,20000,Disponible
+96,Chrysler,2008,Morado,30000,Disponible
+97,Chrysler,2018,Azul,14000,Disponible
+98,Chrysler,2015,Naranja,44000,Disponible
+99,Chrysler,2022,Negro,16000,Disponible
+100,Chrysler,2021,Amarillo,21000,Disponible
+101,Chrysler,2009,Naranja,17000,Disponible
+102,Citroen,2024,Verde,48000,Disponible
+103,Citroen,2007,Negro,38000,Disponible
+104,Citroen,2021,Naranja,29000,Disponible
+105,Citroen,2023,Anaranjado,47000,Disponible
+106,Citroen,2022,Amarillo,40000,Disponible
+107,Citroen,2023,Morado,33000,Disponible
+108,Citroen,2025,Azul,29000,Disponible
+109,Citroen,2008,Rojo,46000,Disponible
+110,Citroen,2015,Morado,22000,Disponible
+111,Citroen,2019,Azul,19000,Disponible
+112,Citroen,2005,Negro,26000,Disponible
+113,Citroen,2014,Morado,29000,Disponible
+114,Dacia,2014,Amarillo,17000,Disponible
+115,Dacia,2021,Amarillo,12000,Disponible
+116,Dacia,2011,Morado,38000,Disponible
+117,Dacia,2021,Verde,26000,Disponible
+118,Dacia,2023,Verde,39000,Disponible
+119,Dacia,2022,Naranja,12000,Disponible
+120,Dacia,2022,Negro,32000,Disponible
+121,Dacia,2018,Amarillo,16000,Disponible
+122,Dacia,2025,Amarillo,28000,Disponible
+123,Dacia,2025,Naranja,38000,Disponible

@@ -13,6 +13,7 @@ def menu_opcion():
             enterContinuar()
             break
         elif opcion == "2":
+            cambiar_orden("registro.txt")
             inventario_auto()
             enterContinuar()
             break
@@ -91,6 +92,7 @@ def inventario_auto():
         print(tabulate(matrisita, headers = ["","Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
 
 def inventario_auto_vendido():
+    cambiar_orden("vendidos.txt")
     with open("vendidos.txt", "r") as lineas:
         listaLineas = []
         listaLineas = (lineas.readlines())
@@ -218,6 +220,24 @@ def eliminar_vendido(file):
         with open("vendidos.txt", "a") as file:
             file.write(registro)
 
+def cambiar_orden(file):
+    listasa = []
+    with open(file, "r") as f:
+        for line in f:
+            apple = line.split(",")
+            listasa.append(apple)
+        listasa.sort(key = lambda x: x[1])
+        apa = []
+        contador = 1
+        for item in listasa:
+            b = ",".join(item[1:])
+            apa.append("{},{}".format(contador,b))
+            contador += 1
+    os.remove(file)
+    with open(file, 'a') as f:
+        for line in apa:
+            f.write(line)
+
 def si_queda_uno(auto_a_comprar):
     if len(auto_a_comprar) == 1:
         strauto_a_comprar = ",".join(auto_a_comprar[0])
@@ -227,6 +247,7 @@ def si_queda_uno(auto_a_comprar):
         comprar = input("1.- sí\n2.- Volver al menú\n3.-Salir\nTu respuesta: ")
         if comprar == "1":
             #Codigo reutilizado de "inventario_auto()"
+            cambiar_orden("registro.txt")
             reemplazar_vendido("registro.txt", int(auto_a_comprar[0][0]))
             print("Gracias por su compra")
             inventario_auto()
@@ -256,7 +277,6 @@ def total_vendidos():
                 precios.append(b)
                 contador += 1
         total = sum(precios)
-        titulos.total_vendidos()
         print("El total de autos vendidos es: {} y la cantidad en soles de autos vendidos es de: S/{} ".format(contador, total))
     else:
         print("No hay autos vendidos")
