@@ -64,12 +64,12 @@ def registro_auto():
             contador = 1
             for line in file:
                 contador += 1
-        registro = "{},{},{},{},{},{}\n".format(contador,marca.lower().capitalize() , fabricacion, color.lower().capitalize() , precio, disponibilidad.lower().capitalize()) #puse esto para que se guarde de manera correcto, creo que debemos encontrar una manera de optimizarlo sin que se vea tan feito
+        registro = "{},{},{},{},{},{}\n".format(contador,marca.lower().capitalize() , fabricacion, color.lower().capitalize() , precio, disponibilidad.lower().capitalize())
         with open("registro.txt", "a") as file:
             file.write(registro)
     else:
         contador = 1
-        registro = "{},{},{},{},{},{}\n".format(contador,marca.lower().capitalize() , fabricacion, color.lower().capitalize() , precio, disponibilidad.lower().capitalize()) #puse esto para que se guarde de manera correcto, creo que debemos encontrar una manera de optimizarlo sin que se vea tan feito
+        registro = "{},{},{},{},{},{}\n".format(contador,marca.lower().capitalize() , fabricacion, color.lower().capitalize() , precio, disponibilidad.lower().capitalize())
         with open("registro.txt", "a") as file:
             file.write(registro)
     #Fin del programa e interacción con el usuario
@@ -78,33 +78,40 @@ def registro_auto():
 
 #Mostrar el inventario de la tienda(los autos disponibles)      
 def inventario_auto():
-    with open("registro.txt", "r") as lineas:
-        listaLineas = []
-        listaLineas = (lineas.readlines())
-        matrisita = []
-        for i in listaLineas:
-            lineax = i.split(",")
-            matrisita.append(lineax)
+    try:
+        cambiar_orden("registro.txt")
+        with open("registro.txt", "r") as lineas:
+            listaLineas = []
+            listaLineas = (lineas.readlines())
+            matrisita = []
+            for i in listaLineas:
+                lineax = i.split(",")
+                matrisita.append(lineax)
 
-        titulos.registro_completado()
+            titulos.registro_completado()
+            
+            #Imprimo la tablita
+            print(tabulate(matrisita, headers = ["","Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+    except:
+        print("No hay autos registrados")
         
-        #Imprimo la tablita
-        print(tabulate(matrisita, headers = ["","Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
-
 def inventario_auto_vendido():
-    cambiar_orden("vendidos.txt")
-    with open("vendidos.txt", "r") as lineas:
-        listaLineas = []
-        listaLineas = (lineas.readlines())
-        matrisita = []
-        for i in listaLineas:
-            lineax = i.split(",")
-            matrisita.append(lineax)
+    if os.path.exists("vendidos.txt"):
+        cambiar_orden("vendidos.txt")
+        with open("vendidos.txt", "r") as lineas:
+            listaLineas = []
+            listaLineas = (lineas.readlines())
+            matrisita = []
+            for i in listaLineas:
+                lineax = i.split(",")
+                matrisita.append(lineax)
 
-        titulos.autos_vendidos()
-        
-        #Imprimo la tablita
-        print(tabulate(matrisita, headers = ["","Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+            titulos.autos_vendidos()
+            
+            #Imprimo la tablita
+            print(tabulate(matrisita, headers = ["","Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
+    else:
+        print("No hay autos vendidos")
 
 #Filtro de selección para comprar auto
 def filtrar_por(dato, matriz_ingresada, posicion):
