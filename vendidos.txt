@@ -1,58 +1,58 @@
-1,Abarth,2010,Negro,43000,Vendido
-2,Abarth,2007,Verde,23000,Vendido
-3,Abarth,2010,Azul,14000,Vendido
-4,Abarth,2013,Anaranjado,22000,Vendido
-5,Abarth,2023,Verde,31000,Vendido
-6,Alfa Romeo,2011,Amarillo,25000,Vendido
-7,Alfa Romeo,2018,Amarillo,14000,Vendido
+1,Abarth,2010,Azul,14000,Vendido
+2,Abarth,2013,Anaranjado,22000,Vendido
+3,Abarth,2007,Verde,23000,Vendido
+4,Abarth,2023,Verde,31000,Vendido
+5,Abarth,2010,Negro,43000,Vendido
+6,Alfa Romeo,2018,Amarillo,14000,Vendido
+7,Alfa Romeo,2011,Amarillo,25000,Vendido
 8,Alfa Romeo,2009,Morado,32000,Vendido
-9,Aston Martin,2011,Amarillo,33000,Vendido
+9,Aston Martin,2013,Morado,17000,Vendido
 10,Aston Martin,2024,Anaranjado,22000,Vendido
-11,Aston Martin,2005,Amarillo,32000,Vendido
-12,Aston Martin,2015,Rojo,46000,Vendido
-13,Aston Martin,2017,Rojo,44000,Vendido
-14,Aston Martin,2007,Blanco,23000,Vendido
-15,Aston Martin,2013,Morado,17000,Vendido
-16,Audi,2011,Anaranjado,18000,Vendido
-17,Audi,2005,Amarillo,12000,Vendido
+11,Aston Martin,2007,Blanco,23000,Vendido
+12,Aston Martin,2005,Amarillo,32000,Vendido
+13,Aston Martin,2011,Amarillo,33000,Vendido
+14,Aston Martin,2017,Rojo,44000,Vendido
+15,Aston Martin,2015,Rojo,46000,Vendido
+16,Audi,2005,Amarillo,12000,Vendido
+17,Audi,2011,Anaranjado,18000,Vendido
 18,Audi,2019,Amarillo,22000,Vendido
-19,Audi,2017,Anaranjado,43000,Vendido
+19,Audi,2023,Rojo,24000,Vendido
 20,Audi,2012,Anaranjado,36000,Vendido
 21,Audi,2009,Rojo,42000,Vendido
-22,Audi,2023,Rojo,24000,Vendido
-23,BMW,2014,Negro,26000,Vendido
-24,BMW,2008,Morado,42000,Vendido
-25,BMW,2018,Anaranjado,34000,Vendido
-26,BMW,2017,Morado,20000,Vendido
-27,BMW,2009,Naranja,14000,Vendido
-28,BMW,2010,Anaranjado,17000,Vendido
+22,Audi,2017,Anaranjado,43000,Vendido
+23,BMW,2009,Naranja,14000,Vendido
+24,BMW,2010,Anaranjado,17000,Vendido
+25,BMW,2017,Morado,20000,Vendido
+26,BMW,2014,Negro,26000,Vendido
+27,BMW,2018,Anaranjado,34000,Vendido
+28,BMW,2008,Morado,42000,Vendido
 29,Bentley,2009,Verde,21000,Vendido
 30,Bentley,2019,Blanco,34000,Vendido
 31,Bentley,2009,Azul,48000,Vendido
-32,Bugatti,2014,Verde,20000,Vendido
-33,Bugatti,2019,Anaranjado,15000,Vendido
-34,Bugatti,2005,Rojo,18000,Vendido
-35,Cadillac,2023,Amarillo,49000,Vendido
+32,Bugatti,2019,Anaranjado,15000,Vendido
+33,Bugatti,2005,Rojo,18000,Vendido
+34,Bugatti,2014,Verde,20000,Vendido
+35,Cadillac,2017,Rojo,26000,Vendido
 36,Cadillac,2009,Anaranjado,28000,Vendido
-37,Cadillac,2012,Naranja,36000,Vendido
-38,Cadillac,2017,Rojo,26000,Vendido
-39,Cadillac,2025,Azul,33000,Vendido
-40,Cadillac,2007,Naranja,33000,Vendido
-41,Chevrolet,2024,Rojo,32000,Vendido
-42,Chevrolet,2025,Rojo,25000,Vendido
-43,Chevrolet,2023,Amarillo,49000,Vendido
-44,Chevrolet,2018,Morado,21000,Vendido
-45,Chevrolet,2024,Negro,11000,Vendido
-46,Chevrolet,2013,Naranja,37000,Vendido
+37,Cadillac,2025,Azul,33000,Vendido
+38,Cadillac,2007,Naranja,33000,Vendido
+39,Cadillac,2012,Naranja,36000,Vendido
+40,Cadillac,2023,Amarillo,49000,Vendido
+41,Chevrolet,2024,Negro,11000,Vendido
+42,Chevrolet,2018,Morado,21000,Vendido
+43,Chevrolet,2025,Rojo,25000,Vendido
+44,Chevrolet,2024,Rojo,32000,Vendido
+45,Chevrolet,2013,Naranja,37000,Vendido
+46,Chevrolet,2023,Amarillo,49000,Vendido
 47,Chrysler,2025,Verde,49000,Vendido
 48,Citroen,2008,Verde,23000,Vendido
 49,Citroen,2015,Morado,26000,Vendido
 50,Citroen,2025,Naranja,41000,Vendido
 51,Citroen,2025,Blanco,43000,Vendido
-52,Dacia,2025,Verde,31000,Vendido
-53,Dacia,2012,Negro,37000,Vendido
-54,Dacia,2010,Anaranjado,17000,Vendido
+52,Dacia,2007,Rojo,15000,Vendido
+53,Dacia,2010,Anaranjado,17000,Vendido
+54,Dacia,2018,Amarillo,18000,Vendido
 55,Dacia,2023,Morado,23000,Vendido
-56,Dacia,2019,Blanco,41000,Vendido
-57,Dacia,2007,Rojo,15000,Vendido
-58,Dacia,2018,Amarillo,18000,Vendido
+56,Dacia,2025,Verde,31000,Vendido
+57,Dacia,2012,Negro,37000,Vendido
+58,Dacia,2019,Blanco,41000,Vendido

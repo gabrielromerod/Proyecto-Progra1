@@ -226,7 +226,7 @@ def cambiar_orden(file):
         for line in f:
             apple = line.split(",")
             listasa.append(apple)
-        listasa.sort(key = lambda x: x[1])
+        listasa.sort(key = lambda x: x[1] + x[4])
         apa = []
         contador = 1
         for item in listasa:
