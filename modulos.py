@@ -9,32 +9,44 @@ def menu_opcion():
         opcion = input("opcion: ")
         #if opcion < 4 and opcion > 0: 
         if opcion == "1":
+            limpiar_consola()
             registro_auto()
             enterContinuar()
+            limpiar_consola()
             break
         elif opcion == "2":
+            limpiar_consola()
             inventario_auto()
             enterContinuar()
+            limpiar_consola()
             break
         elif opcion == "3":
+            limpiar_consola()
             comprar_auto()
             enterContinuar()
+            limpiar_consola()
             break
         elif opcion == "4":
+            limpiar_consola()
             inventario_auto_vendido()
             enterContinuar()
+            limpiar_consola()
             break
         elif opcion == "5":
+            limpiar_consola()
             total_vendidos()
             enterContinuar()
+            limpiar_consola()
             break
         elif opcion == "6":
+            limpiar_consola()
             exit()
         else:
             print("Introduce una opcion valida, por favor vuelva a intentarlo")
 
 #Registro de autos
 def registro_auto():
+    titulos.registro_auto()
     try:
         marca = input("Introduce la Marca: ")
         fabricacion = int(input("Introduce el año de Fabricación: "))
@@ -50,7 +62,6 @@ def registro_auto():
             print("El precio no puede ser negativo, por favor vuelva a intentarlo")
             print("--------------------------------------------------------------------")
             registro_auto()
-        
 
     except:
         print("--------------------------------------------------------------------")
@@ -72,6 +83,7 @@ def registro_auto():
         with open("registro.txt", "a") as file:
             file.write(registro)
     #Fin del programa e interacción con el usuario
+    limpiar_consola()
     titulos.registro_completado()
     print("\n Registro exitoso !!!")
 
@@ -87,7 +99,7 @@ def inventario_auto():
                 lineax = i.split(",")
                 matrisita.append(lineax)
 
-            titulos.registro_completado()
+            titulos.autos_disponibles()
             
             #Imprimo la tablita
             print(tabulate(matrisita, headers = ["","Marca", "Fabricacion", "Color", "Precio", "Estado"], tablefmt="fancy_grid" ))
@@ -116,6 +128,7 @@ def inventario_auto_vendido():
 
 #Filtro de selección para comprar auto
 def filtrar_por(dato, matriz_ingresada, posicion):
+    limpiar_consola()
     nueva_matriz = []
 
     #Filtrar por dato
@@ -261,6 +274,7 @@ def si_queda_uno(auto_a_comprar):
             #Codigo reutilizado de "inventario_auto()"
             cambiar_orden("registro.txt")
             reemplazar_vendido("registro.txt", int(auto_a_comprar[0][0]))
+            limpiar_consola()
             print("Gracias por su compra")
             inventario_auto()
             eliminar_vendido("registro.txt")
@@ -279,6 +293,7 @@ def si_queda_uno(auto_a_comprar):
         enterContinuar()
 
 def total_vendidos():
+    titulos.total_vendidos()
     if os.path.exists("vendidos.txt"):
         contador = 0
         precios = []
@@ -289,7 +304,7 @@ def total_vendidos():
                 precios.append(b)
                 contador += 1
         total = sum(precios)
-        print("El total de autos vendidos es: {} y la cantidad en soles de autos vendidos es de: S/{} ".format(contador, total))
+        print("El total de autos vendidos es: {} \nCantidad en soles de autos vendidos: S/{} ".format(contador, total))
     else:
         print("No hay autos vendidos")
 
@@ -297,4 +312,14 @@ def enterContinuar():
     a = input("Presiona enter para continuar...")
     a = ""
     if a  == "":
+        limpiar_consola()
         menu_opcion()
+
+def limpiar_consola():
+
+    if os.name == "nt":
+        #Windows
+        os.system("cls")
+    else:
+        #Mac Os
+        os.system("clear")
